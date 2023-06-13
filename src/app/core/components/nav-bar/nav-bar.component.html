@@ -1,0 +1,25 @@
+<nav class="navigation-bar">
+    <ul>
+        <a [routerLink]="'/home'">
+            <li
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"> Home </li>
+        </a>
+        <a [routerLink]="'/products'">
+            <li
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"> Products </li>
+        </a>
+        <a [routerLink]="'/gallery'">
+            <li
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"> Our Gallery </li>
+
+        </a>
+            <a [routerLink]="'/formulario'">
+            <li
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"> Form </li>
+            </a>
+    </ul>
+</nav>

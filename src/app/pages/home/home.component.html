@@ -1,0 +1,12 @@
+<br>
+<body>
+    <div class="home-section">
+        <h1>{{myTitle}}</h1>
+        <p>{{mySubTitle}}</p>
+    </div>
+
+    <div class="container-photos">
+        <img *ngFor="let image of imageList" [src]="image" />
+    </div>
+</body>
+

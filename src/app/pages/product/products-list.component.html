@@ -1,0 +1,8 @@
+<p>products-list works!</p>
+<ul>
+  <li *ngFor="let product of productList">
+    <h4>{{ product.product }}</h4>
+    <p>{{ product.price }}</p>
+    <img [src]="product.image" [alt]="product.image">
+  </li>
+</ul>
