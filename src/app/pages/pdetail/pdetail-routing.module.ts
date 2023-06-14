@@ -5,7 +5,7 @@ import { PdetailComponent } from './pdetail.component';
 
 const routes: Routes = [
   {
-    path: 'products/:id',
+    path: 'pdetail/:id',
     pathMatch: 'full',
     component: PdetailComponent,
   }  

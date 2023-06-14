@@ -22,8 +22,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'products/:id',
-    pathMatch: 'full',
+    path: 'pdetail/:id',
     loadChildren: () => import('./pages/pdetail/pdetail.module').then((m) => m.PdetailModule),
   },
   

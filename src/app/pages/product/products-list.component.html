@@ -1,8 +1,9 @@
 <p>products-list works!</p>
-<ul>
-  <li *ngFor="let product of productList">
-    <h4>{{ product.product }}</h4>
-    <p>{{ product.price }}</p>
-    <img [src]="product.image" [alt]="product.image">
-  </li>
-</ul>
+<div class="container">
+<div *ngFor="let product of productList" class="product">
+  <img [src]="product.image" [alt]="product.image">
+  <h4>{{ product.product }}</h4>
+  <p>{{ product.price }}</p>
+  <div><a [routerLink]="['../pdetail', product.id]">Detail</a></div>
+</div>
+</div>
