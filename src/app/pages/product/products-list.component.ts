@@ -10,13 +10,16 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./products-list.component.scss']
 })
 export class ProductsListComponent implements OnInit {
+    
   public productList: ProductB[] = [];
   public productSubscription?: Subscription;
 
-  constructor(private productService: ProductsService) {}
+  constructor(
+    private productService: ProductsService) {}
 
-  ngOnInit(): void {
-    this.productService.getProducts('id').subscribe((data: ProductB[]) => {
+  public ngOnInit(): void {
+    
+    this.productService.getProducts().subscribe((data: ProductB[]) => {
       console.log(data);
       this.productList = data;
     });

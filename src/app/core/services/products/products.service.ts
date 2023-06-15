@@ -3,9 +3,6 @@ import { Injectable } from '@angular/core';
 import { ProductB } from './products.models';
 import { Observable } from 'rxjs';
 
-
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +11,11 @@ export class ProductsService {
   
   constructor(private http: HttpClient) {}
 
-  public getProducts(id: string): Observable<ProductB[]> {
+  public getProducts(): Observable<ProductB[]> {
     return this.http.get<ProductB[]>(`${this.URL}`);
+  }
+
+  public getProductsId(id: string): Observable<ProductB[]> {
+    return this.http.get<ProductB[]>(`${this.URL}/pdetail/${id}`);
   }
 }

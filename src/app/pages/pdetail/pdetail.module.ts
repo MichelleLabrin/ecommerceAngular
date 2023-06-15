@@ -1,8 +1,9 @@
-import { PdetailRoutingModule } from './pdetail-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PdetailComponent } from './pdetail.component';
+import { PdetailRoutingModule } from './pdetail-routing.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -13,9 +14,8 @@ import { PdetailComponent } from './pdetail.component';
   imports: [
     CommonModule,
     PdetailRoutingModule,
+    RouterModule,
   ],
-  exports: [
-    PdetailComponent,
-  ]
+
 })
 export class PdetailModule { }
