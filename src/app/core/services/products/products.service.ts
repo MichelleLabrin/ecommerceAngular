@@ -1,7 +1,7 @@
+import { ProductB } from 'src/app/core/services/products/products.models';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ProductB } from './products.models';
-import { Observable } from 'rxjs';
+import { Observable, pipe, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,4 +18,17 @@ export class ProductsService {
   public getProductsId(id: string): Observable<ProductB[]> {
     return this.http.get<ProductB[]>(`${this.URL}/pdetail/${id}`);
   }
+
+  public createProduct (product: ProductB): Observable<ProductB> {
+    return this.http.post<ProductB>(`${this.URL}/products`, product);
+  }
+
+public editProduct (id: string, body: ProductB): Observable<ProductB> {
+  return this.http.put<ProductB>(`${this.URL}/products`, body);
+}
+
+public deleteProduct (id: string): Observable<ProductB> {
+  return this.http.delete<ProductB>(`${this.URL}`);
+}
+
 }

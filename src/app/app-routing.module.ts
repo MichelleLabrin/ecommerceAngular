@@ -18,7 +18,7 @@ const routes: Routes = [
   {
     path: 'products',
     pathMatch: 'full',
-    loadChildren: () => import('./pages/product/products-list.module').then(m => m.ProductsListModule),
+    loadChildren: () => import('./pages/products/products-list.module').then(m => m.ProductsListModule),
   },
 
   {
@@ -26,6 +26,16 @@ const routes: Routes = [
     loadChildren: () => import('./pages/pdetail/pdetail.module').then((m) => m.PdetailModule),
   },
   
+  {
+    path: 'edit-products',
+    loadChildren: ()=> import ('./pages/edit-products/edit-products.module') .then((m) => m.EditProductsModule),
+  },
+
+  {
+    path: 'new-products',
+    loadChildren: ()=> import ('./pages/new-products/new-product.module') .then((m) => m.NewProductModule),
+  },
+
   {
     path: 'gallery',
     pathMatch: 'prefix',
@@ -39,6 +49,8 @@ const routes: Routes = [
     loadChildren: () =>
       import('src/app/pages/formulario/formulario.module').then((m) => m.FormularioModule),
   },
+  { path: 'productform', loadChildren: () => import('./share/Component/productform/productform-routing.module').then(m => m.ProductformRoutingModule) },
+  { path: 'productform', loadChildren: () => import('./share/Component/productform/productform-routing.module').then(m => m.ProductformRoutingModule) },
 ];
 
 

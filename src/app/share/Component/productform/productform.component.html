@@ -1,0 +1,34 @@
+ <p>productform works!</p>
+
+<div>
+<form 
+*ngIf="productForm"
+    [formGroup]="productForm"
+    (submit)="createProduct()">
+
+<div>
+<label>Name Product</label>
+<input formControlName="name" type="text">
+<p *ngIf="!productForm.get('name'?.valid) && productForm.get ('name'?.dirty) || productForm.get ('name'?.touched)">
+Require </p>   
+</div>
+
+<div>
+    <label>Price Product</label>
+    <input formControlName="price" type="number">
+<p *ngIf="!productForm.get('price'?.valid) && productForm.get ('price'?.dirty) || productForm.get ('price'?.touched)">
+Require </p>  
+    </div>
+
+    <div>
+        <label>Description Product</label>
+    <textarea formControlName="description"></textarea>
+    <p *ngIf="!productForm.get('description'?.valid) && productForm.get ('description'?.dirty) || productForm.get ('description'?.touched)">
+    Require </p>  
+        </div>
+
+
+        <button type="submit"> {{product? || 'edit product'}}:'create Product'</button>
+</form>
+</div>
+

@@ -1,0 +1,24 @@
+<div class="filter">
+  <input [(ngModel)]="filterValue" />
+</div>
+
+
+<div class="container">
+
+  <app-product
+  *ngFor="let product of productList | filter: filterValue"
+  [productInfo]="product" class="product"
+  (OnDeleteProduct)="deleteProduct(product)"
+></app-product>
+  </div>
+
+
+
+  <!-- <div class="container">
+    <div *ngFor="let product of productList" class="product">
+      <img [src]="product.image" [alt]="product.image">
+      <h4>{{ product.product }}</h4>
+      <p>{{ product.price }}</p>
+      <div><a [routerLink]="['../pdetail', product.id]">Detail</a></div>
+    </div>
+    </div> -->

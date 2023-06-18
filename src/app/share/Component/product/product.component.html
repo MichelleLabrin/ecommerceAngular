@@ -1,0 +1,15 @@
+<div 
+*ngIf="productInfo"    
+class="container">
+
+    <div class="product">
+        <img [src]="product.image" [alt]="product.image">
+        <h4>{{ product.product }}</h4>
+        <p>{{ product.price }}</p>
+        <div>
+        <a [routerLink]="['../pdetail', product.id]">Detail</a>
+        <a [routerLink]="['../edit-products', product.id]">Edit</a>
+        <button (click)="deleteProduct()"> Delete </button>
+        </div>
+    </div>
+</div>
