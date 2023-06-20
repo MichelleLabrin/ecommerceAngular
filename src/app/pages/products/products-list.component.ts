@@ -32,7 +32,7 @@ export class ProductsListComponent implements OnInit {
 
     public deleteProduct(product: ProductB) {
       this.productService.deleteProduct(product.id).subscribe(()=> {
-        this.getProducts;
+        this.getProducts()
       });
     }
 

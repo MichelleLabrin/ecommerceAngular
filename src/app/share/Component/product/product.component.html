@@ -3,12 +3,12 @@
 class="container">
 
     <div class="product">
-        <img [src]="product.image" [alt]="product.image">
-        <h4>{{ product.product }}</h4>
-        <p>{{ product.price }}</p>
+        <img [src]="productInfo.image" [alt]="productInfo.image">
+        <h4>{{ productInfo.product }}</h4>
+        <p>{{ productInfo.price }}</p>
         <div>
-        <a [routerLink]="['../pdetail', product.id]">Detail</a>
-        <a [routerLink]="['../edit-products', product.id]">Edit</a>
+        <a [routerLink]="['../pdetail', productInfo.id]">Detail</a>
+        <a [routerLink]="['../edit-products', productInfo.id]">Edit</a>
         <button (click)="deleteProduct()"> Delete </button>
         </div>
     </div>

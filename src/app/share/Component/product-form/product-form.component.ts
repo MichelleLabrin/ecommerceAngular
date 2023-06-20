@@ -1,4 +1,5 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { ProductB } from '../../../core/services/products/products.models';
+import { Component, OnInit, Input } from '@angular/core';
 import {
   FormGroup,
   FormControl,
@@ -6,19 +7,19 @@ import {
   Validators,
 } from '@angular/forms';
 
-import { PRODUCT_BEAUTY, ProductBeauty } from './productoption';
-import { ProductB } from 'src/app/core/services/products/products.models';
-import { ProductsService } from './../../../core/services/products/products.service';
+import { PRODUCT_BEAUTY, ProductBeauty } from './product-option';
+import { ProductsService } from '../../../core/services/products/products.service';
 
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
+
 @Component({
-  selector: 'app-productform',
-  templateUrl: './productform.component.html',
-  styleUrls: ['./productform.component.scss'],
+  selector: 'app-product-form',
+  templateUrl: './product-form.component.html',
+  styleUrls: ['./product-form.component.scss'],
 })
-export class ProductformComponent implements OnInit {
+export class ProductFormComponent implements OnInit {
   @Input() public product?: ProductB;
 
   public productForm?: FormGroup;
@@ -46,7 +47,7 @@ export class ProductformComponent implements OnInit {
         ? this.productsService.editProduct(
             this.product.id,
             this.productForm.value
-          ): this.productsService.createProduct();
+          ): this.productsService.createProduct(this.productForm.value);
 
           productRequest.subscribe((product: ProductB) => {
         this.productForm?.reset();

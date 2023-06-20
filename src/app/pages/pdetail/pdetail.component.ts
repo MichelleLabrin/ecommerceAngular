@@ -13,7 +13,6 @@ export class PdetailComponent {
   public myTitle: string = 'Our product detail';
 
   public product?: ProductB;
-  public productList: ProductB[] = [];
 
   constructor(
     public activatedRoute: ActivatedRoute,
@@ -23,8 +22,8 @@ export class PdetailComponent {
       const productId = params['id'];
       this.productService
         .getProductsId(productId)
-        .subscribe((product: ProductB[]) => {
-          this.productList = product;
+        .subscribe((product: ProductB) => {
+          this.product = product;
         });
     });
   }

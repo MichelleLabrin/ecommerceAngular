@@ -5,13 +5,13 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { ProductComponent } from './Component/product/product.component';
-import { ProductformComponent } from './Component/productform/productform.component';
+import { ProductFormComponent } from './Component/product-form/product-form.component';
 import { FilterPipe } from '../share/pipe/filter.pipe';
 
 @NgModule({
   declarations: [
     ProductComponent,
-    ProductformComponent,
+    ProductFormComponent,
     FilterPipe,
   ],
   imports: [
@@ -23,6 +23,8 @@ import { FilterPipe } from '../share/pipe/filter.pipe';
 
   exports: [
     ProductComponent,
+    ProductFormComponent,
+    FilterPipe,
   ]
 })
 export class ShareModule { }

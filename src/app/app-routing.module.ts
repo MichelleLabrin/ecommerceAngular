@@ -27,7 +27,7 @@ const routes: Routes = [
   },
   
   {
-    path: 'edit-products',
+    path: 'edit-products/:id',
     loadChildren: ()=> import ('./pages/edit-products/edit-products.module') .then((m) => m.EditProductsModule),
   },
 
@@ -49,8 +49,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('src/app/pages/formulario/formulario.module').then((m) => m.FormularioModule),
   },
-  { path: 'productform', loadChildren: () => import('./share/Component/productform/productform-routing.module').then(m => m.ProductformRoutingModule) },
-  { path: 'productform', loadChildren: () => import('./share/Component/productform/productform-routing.module').then(m => m.ProductformRoutingModule) },
+  
 ];
 
 

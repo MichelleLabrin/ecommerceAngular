@@ -9,7 +9,7 @@ import { ProductsService } from 'src/app/core/services/products/products.service
   styleUrls: ['./edit-products.component.scss']
 })
 export class EditProductsComponent {
-  public product?: ProductB[];
+  public product?: ProductB;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -18,7 +18,7 @@ export class EditProductsComponent {
     this.activatedRoute.params.subscribe((params) => { 
       const productId = params['id'];
 
-      this.productService.getProductsId(productId).subscribe((product: ProductB[]) => {
+      this.productService.getProductsId(productId).subscribe((product: ProductB) => {
         this.product = product;
       });
     });
