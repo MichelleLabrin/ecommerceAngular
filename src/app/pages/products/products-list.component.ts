@@ -11,6 +11,8 @@ import { Subscription } from 'rxjs';
 })
 
 export class ProductsListComponent implements OnInit {
+  public myTitleProducts: string = 'OUR PRODUCTS!';
+
     
   public productList: ProductB[] = [];
   public filterValue: string= "";

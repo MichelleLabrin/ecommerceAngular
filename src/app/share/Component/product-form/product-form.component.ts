@@ -36,6 +36,7 @@ export class ProductFormComponent implements OnInit {
     this.productForm = this.fb.group({
       //product (no name)
       product: new FormControl (this.product?.product ||"", [Validators.required]),
+      image: new FormControl (this.product?.product || "", [Validators.required]),
       price: new FormControl(this.product?.price ||"", [Validators.required]),
       description: new FormControl(this.product?.description ||"", [Validators.maxLength(10)]),
     });

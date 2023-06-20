@@ -7,9 +7,9 @@ class="container">
         <h4>{{ productInfo.product }}</h4>
         <p>{{ productInfo.price }}</p>
         <div>
-        <a [routerLink]="['../pdetail', productInfo.id]">Detail</a>
-        <a [routerLink]="['../edit-products', productInfo.id]">Edit</a>
-        <button (click)="deleteProduct()"> Delete </button>
+        <a [routerLink]="['../pdetail', productInfo.id]" class="blue-link">Detail</a>
+        <a [routerLink]="['../edit-products', productInfo.id]" class="beige-link">Edit</a>
+        <button (click)="deleteProduct()">Delete</button>
         </div>
     </div>
 </div>

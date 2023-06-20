@@ -1,34 +1,64 @@
- <p>productform works!</p>
+<div class="form-container">
+    <form
+        *ngIf="productForm"
+        [formGroup]="productForm"
+        (submit)="createProduct()"
+    >
 
-<div>
-<form 
-*ngIf="productForm"
-    [formGroup]="productForm"
-    (submit)="createProduct()">
-
-<div>
-<label>Product Name </label>
-<input formControlName="product" type="text">
-<p *ngIf="!productForm.get('product')?.valid && productForm.get('product')?.dirty || productForm.get('product')?.touched">
-Require </p>   
-</div>
-
-<div>
-    <label>Product Price</label>
-    <input formControlName="price" type="number">
-<p *ngIf="!productForm.get('price')?.valid && productForm.get('price')?.dirty || productForm.get('price')?.touched">
-Require </p>  
+    <div>
+        <label>Product Name</label>
+        <input formControlName="product" type="text" />
+        <p
+        *ngIf="
+            (!productForm.get('product')?.valid &&
+            productForm.get('product')?.dirty) ||
+            productForm.get('product')?.touched"
+        >
+            Required
+        </p>
     </div>
 
     <div>
-        <label> Product Description</label>
-    <textarea formControlName="description"></textarea>
-    <p *ngIf="!productForm.get('description')?.valid && productForm.get('description')?.dirty || productForm.get('description')?.touched">
-    Require </p>  
-        </div>
+        <label>Product Image</label>
+        <input formControlName="image" type="text" />
+        <p
+            *ngIf="
+                (!productForm.get('image')?.valid &&
+                productForm.get('image')?.dirty) ||
+                productForm.get('image')?.touched"
+        >
+        Required
+        </p>
+    </div>
 
+    <div>
+        <label>Product Price</label>
+        <input formControlName="price" type="number" />
+    <p
+        *ngIf="
+            (!productForm.get('price')?.valid &&
+            productForm.get('price')?.dirty) ||
+            productForm.get('price')?.touched"
+        >
+        Required
+    </p>
+    </div>
 
-        <button type="submit"> {{product ? 'edit product' : 'create Product'}}</button>
-</form>
+    <div>
+        <label>Product Description</label>
+        <textarea formControlName="description"></textarea>
+        <p
+        *ngIf="
+            (!productForm.get('description')?.valid &&
+            productForm.get('description')?.dirty) ||
+            productForm.get('description')?.touched"
+      >
+        Required
+      </p>
+    </div>
+
+    <button type="submit">
+      {{ product ? "Edit Product" : "Create Product" }}
+    </button>
+  </form>
 </div>
-

@@ -9,6 +9,7 @@ import { ProductsService } from 'src/app/core/services/products/products.service
   styleUrls: ['./edit-products.component.scss']
 })
 export class EditProductsComponent {
+  public myTitleEditProducts: string = 'EDIT PRODUCTS!';
   public product?: ProductB;
 
   constructor(

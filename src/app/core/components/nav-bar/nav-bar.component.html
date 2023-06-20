@@ -10,6 +10,13 @@
             routerLinkActive="active-link"
             [routerLinkActiveOptions]="{ exact: true }"> Products </li>
         </a>
+
+        <a [routerLink]="'/new-products'">
+            <li
+            routerLinkActive="new-products"
+            [routerLinkActiveOptions]="{ exact: true }"> Create Products </li>
+        </a>
+
         <a [routerLink]="'/gallery'">
             <li
             routerLinkActive="active-link"
