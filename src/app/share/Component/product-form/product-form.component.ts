@@ -1,11 +1,6 @@
 import { ProductB } from '../../../core/services/products/products.models';
 import { Component, OnInit, Input } from '@angular/core';
-import {
-  FormGroup,
-  FormControl,
-  FormBuilder,
-  Validators,
-} from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
 
 import { PRODUCT_BEAUTY, ProductBeauty } from './product-option';
 import { ProductsService } from '../../../core/services/products/products.service';
@@ -35,23 +30,23 @@ export class ProductFormComponent implements OnInit {
   public ngOnInit(): void {
     this.productForm = this.fb.group({
       //product (no name)
-      product: new FormControl (this.product?.product ||"", [Validators.required]),
-      image: new FormControl (this.product?.product || "", [Validators.required]),
-      price: new FormControl(this.product?.price ||"", [Validators.required]),
-      description: new FormControl(this.product?.description ||"", [Validators.maxLength(10)]),
+      product: new FormControl (this.product?.product || '', [Validators.required]),
+      image: new FormControl (this.product?.image || '', [Validators.required]),
+      price: new FormControl(this.product?.price || '', [Validators.required]),
+      description: new FormControl(this.product?.description || '', [Validators.maxLength(10)]),
     });
   }
 
   public createProduct() {
     if (this.productForm?.valid) {
       const productRequest = this.product
-        ? this.productsService.editProduct(
-            this.product.id,
+        ? this.productsService.editProduct(this.product.id,
             this.productForm.value
           ): this.productsService.createProduct(this.productForm.value);
 
           productRequest.subscribe((product: ProductB) => {
-        this.productForm?.reset();
+            this.productForm?.reset();
+        this.router.navigateByUrl('product-list')
       });
     }
   }

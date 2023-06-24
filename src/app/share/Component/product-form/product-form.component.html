@@ -1,57 +1,60 @@
 <div class="form-container">
-    <form
-        *ngIf="productForm"
-        [formGroup]="productForm"
-        (submit)="createProduct()"
-    >
-
+  <form
+    *ngIf="productForm"
+    [formGroup]="productForm"
+    (submit)="createProduct()"
+  >
     <div>
-        <label>Product Name</label>
-        <input formControlName="product" type="text" />
-        <p
+      <label>Product Name</label>
+      <input formControlName="product" type="text" />
+      <p
         *ngIf="
-            (!productForm.get('product')?.valid &&
+          (!productForm.get('product')?.valid &&
             productForm.get('product')?.dirty) ||
-            productForm.get('product')?.touched"
-        >
-            Required
-        </p>
-    </div>
-
-    <div>
-        <label>Product Image</label>
-        <input formControlName="image" type="text" />
-        <p
-            *ngIf="
-                (!productForm.get('image')?.valid &&
-                productForm.get('image')?.dirty) ||
-                productForm.get('image')?.touched"
-        >
+          productForm.get('product')?.touched
+        "
+      >
         Required
-        </p>
+      </p>
     </div>
 
     <div>
-        <label>Product Price</label>
-        <input formControlName="price" type="number" />
-    <p
+      <label>Product Image</label>
+      <input formControlName="image" type="text" />
+      <p
         *ngIf="
-            (!productForm.get('price')?.valid &&
+          (!productForm.get('image')?.valid &&
+            productForm.get('image')?.dirty) ||
+          productForm.get('image')?.touched
+        "
+      >
+        Required
+      </p>
+    </div>
+
+    <div>
+      <label>Product Price</label>
+      <input formControlName="price" type="number" />
+      <p
+        *ngIf="
+          (!productForm.get('price')?.valid &&
             productForm.get('price')?.dirty) ||
-            productForm.get('price')?.touched"
-        >
+          productForm.get('price')?.touched
+        "
+      >
         Required
-    </p>
+      </p>
     </div>
 
     <div>
-        <label>Product Description</label>
-        <textarea formControlName="description"></textarea>
-        <p
+      <label>Product Description</label>
+      <textarea formControlName="description"></textarea>
+      <p
         *ngIf="
-            (!productForm.get('description')?.valid &&
-            productForm.get('description')?.dirty) ||
-            productForm.get('description')?.touched"
+          productForm.get('description')?.invalid &&
+          (productForm.get('description')?.dirty ||
+            productForm.get('description')?.touched)
+        "
       >
         Required
       </p>
